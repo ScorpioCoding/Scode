@@ -20,7 +20,7 @@ class Translation
 
     $data = array();
     $data = array_merge_recursive($controller, $template);
-    print_r($data);
+    //print_r($data);
     return $data;
   }
 
