@@ -9,7 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--surface4);
+  background-color: var(--surface-4);
   color: var(--brand);
   height: 100%;
 }
@@ -63,14 +63,14 @@ header {
 }
 
 .navbar-links li:hover {
-  background-color: var(--surface3);
+  background-color: var(--surface-3);
   border-top: 4px solid var(--accent);
 }
 
 .navbar-links a {
   font-size: var(--fs-400);
   text-decoration: none;
-  color: var(--textW);
+  color: var(--txt-light);
   display: block;
 }
 
