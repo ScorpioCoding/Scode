@@ -22,7 +22,7 @@ function copyPhp() {
 
 //Translation
 function copyJson() {
-  return src("../dev/Modules/**/*.json").pipe(dest("../html/Modules/"));
+  return src("../dev/**/*.json").pipe(dest("../html/"));
 }
 
 function copyImages() {
