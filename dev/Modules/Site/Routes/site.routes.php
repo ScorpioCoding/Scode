@@ -33,43 +33,12 @@ return (object) array(
     'action' => 'index'
   ],
 
-  '/{lang}/gallery' => [
-    'module' => 'Site',
-    'namespace' => 'Modules\Site\Controllers',
-    'controller' => 'Gallery',
-    'action' => 'index'
-  ],
-
-  '/{lang}/activity' => [
-    'module' => 'Site',
-    'namespace' => 'Modules\Site\Controllers',
-    'controller' => 'Activity',
-    'action' => 'index'
-  ],
-
-  '/{lang}/booking' => [
-    'module' => 'Site',
-    'namespace' => 'Modules\Site\Controllers',
-    'controller' => 'Booking',
-    'action' => 'index'
-  ],
-
   '/{lang}/contact' => [
     'module' => 'Site',
     'namespace' => 'Modules\Site\Controllers',
     'controller' => 'Contact',
     'action' => 'index'
-  ],
-
-  '/{lang}/mail' => [
-    'module' => 'Site',
-    'namespace' => 'Modules\Site\Controllers',
-    'controller' => 'Mail',
-    'action' => 'index'
   ]
-
-
-
 
 
 

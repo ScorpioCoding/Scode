@@ -9,9 +9,9 @@ use App\Core\Meta;
 
 
 /**
- *  Home Controller
+ *  Contact Controller
  */
-class Home extends Controller
+class Contact extends Controller
 {
   protected function before()
   {

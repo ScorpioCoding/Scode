@@ -9,7 +9,7 @@ use App\Core\Meta;
 
 
 /**
- *  Home
+ *  Home Controller
  */
 class Home extends Controller
 {
@@ -20,7 +20,7 @@ class Home extends Controller
   public function indexAction($args = array())
   {
     //Template for rendering
-    $args['template'] = 'Site';
+    $args['template'] = 'Frontend';
     //MetaData
     $meta = array();
     $meta = (new Meta($args))->getMeta();
@@ -33,7 +33,8 @@ class Home extends Controller
 
 
 
-
+    //page for rendering default = controller
+    //$args['page'] = 'Home';
     View::render($args, $meta, $trans, [
       'data' => $data
     ]);

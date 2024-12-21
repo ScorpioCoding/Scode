@@ -3,10 +3,10 @@
 namespace App\Core;
 
 
-/** THE VIEW
+/** THE API RENDERING
  * 
  */
-class View
+class Api
 {
   public function __construct()
   {
@@ -15,15 +15,10 @@ class View
 
   public static function setPage($args = array())
   {
-    if ($args['page'] === "" || $args['page'] == null)
-      $view = $args['controller'];
-    else
-      $view = $args['page'];
-
     $page = PATH_MOD;
-    $page .= ucfirst($args['module']) . DS . 'Views' . DS;
-    $page .= ucfirst($view);
-    $page .= '.phtml';
+    $page .= ucfirst($args['module']) . DS . 'Apis' . DS;
+    $page .= ucfirst($args['api']);
+    $page .= '.php';
 
     try {
       self::checkFile($page);
@@ -36,10 +31,10 @@ class View
 
   public static function setTemplate($args = array())
   {
-    $template = PATH_MOD;
-    $template .= ucfirst($args['module']) . DS . 'Templates' . DS;
+    $template = PATH_APP;
+    $template .= 'Templates' . DS;
     $template .= ucfirst($args['template']);
-    $template .= '.phtml';
+    $template .= '.php';
 
     try {
       self::checkFile($template);
@@ -52,24 +47,23 @@ class View
 
 
   /*
-   * rendering the page - View.php
-   * @params   array   $paths
-   * @params   array   $data
+   * rendering the page - Api.php
+   * @params   array   $args
+   * @params   array   $meta
    */
-  public static function render($args = array(), $meta = array(), $trans = array(), $data = array())
+  public static function render($args = array(), $data = array())
   {
     try {
       $page = self::setPage($args);
 
-      $template = self::setTemplate($args);
+      //$template = self::setTemplate($args);
 
       if ($page) {
-        extract($meta);
-        extract($trans);
         extract($data);
-        require $template;
+        //require $template;
+        require $page;
       } else {
-        throw new NewException("View.php : render : Rendering FAILED");
+        throw new NewException("Api.php : render : Rendering FAILED");
       }
     } catch (NewException $e) {
       echo $e->getErrorMsg();
@@ -84,7 +78,7 @@ class View
   public static function checkFile($file)
   {
     if (!is_readable($file)) {
-      throw new NewException("View.php : checkFile : File doesn't exist in Views : $file ");
+      throw new NewException("Api.php : checkFile : File doesn't exist in Apis : $file ");
       return false;
     } else {
       return true;

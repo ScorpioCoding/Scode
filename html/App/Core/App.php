@@ -25,12 +25,12 @@ class App
   {
 
     $routes = (new SetRoutes)->getRoutes();
-
     $router = new Router();
 
     foreach ($routes as $route => $params) {
       $router->addRoute($route, $params);
-    };
+    }
+    ;
 
     //PARSING URL
     $tokens = htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES);
