@@ -31,4 +31,4 @@ When putting it live just transfer the dockerfiles and the html directory
 
 -Is a file with most used Docker Compose commands.  
 -You can find more info at https://makefiletutorial.com  
--`Make help` will sho you the list of commands created.
+-`Make help` will sho you the list of commands created. -`choco install make`for windows OS.
