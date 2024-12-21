@@ -5,12 +5,12 @@
   "author": "denOldTimer",
   "license": "All rights reserved",
   "devDependencies": {
-    "cssnano": "^5.1.15",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.1",
+    "cssnano": "^7.0.6",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
+    "gulp-sass": "^6.0.0",
     "gulp-terser": "^2.1.0",
-    "sass": "^1.60.0"
+    "sass": "^1.83.0"
   }
 }

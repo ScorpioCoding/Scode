@@ -5,12 +5,7 @@ const cssNano = require("cssnano");
 const terser = require("gulp-terser");
 const rename = require("gulp-rename");
 
-//Templates
-function copyApp() {
-  return src("../dev/App/**/*.phtml").pipe(dest("../html/App/"));
-}
-
-//Views
+//Views, Templates
 function copyPhtml() {
   return src("../dev/Modules/**/*.phtml").pipe(dest("../html/Modules/"));
 }
@@ -65,7 +60,6 @@ function jsTask() {
 }
 
 function watchTask() {
-  watch("../dev/App/**/*.phtml", copyApp);
   watch("../dev/Modules/**/*.phtml", copyPhtml);
   watch("../dev/Modules/**/*.php", copyPhp);
   watch("../dev/Modules/**/*.json", copyJson);
@@ -75,7 +69,6 @@ function watchTask() {
 }
 
 exports.default = series(
-  copyApp,
   copyPhtml,
   copyPhp,
   copyJson,
